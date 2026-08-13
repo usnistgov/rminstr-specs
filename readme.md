@@ -13,7 +13,7 @@ performing our RF calibrations. This package facilitates this analysis by provid
 validated specification sheets via a python interface.
 
 For example, to get the uncertainty associated with voltage measurements of an HP 3458A voltmeter
-under typicaly operating conditions, you can do the following:
+under typical operating conditions, you can do the following:
 
 ```python
 from rminstr_specs import HP3458A
