@@ -10,11 +10,14 @@ attempt to infer calibration history and temperature information.
 
 """
 
-import numpy as _np
-from rminstr_specs import Specification, SpecsSettingWarning, CalibrationWarning
-from dataclasses import dataclass as _dataclass
-from rminstr_specs._collections import _ciel_to_list
 import warnings as _warnings
+from dataclasses import dataclass as _dataclass
+
+import numpy as _np
+
+from rminstr_specs import CalibrationWarning, Specification, SpecsSettingWarning
+from rminstr_specs._collections import _ciel_to_list
+
 # %% Classes for storing spec tables and outputting values
 
 __all__ = []
@@ -72,7 +75,7 @@ _source = {
 _measure = {
     200 * 1e-3: (0.012, 300 * 1e-6),
     2: (0.012, 300 * 1e-6),
-    20: (0.015, 1.5* 1e-3),
+    20: (0.015, 1.5 * 1e-3),
     200: (0.015, 10 * 1e-3),
 }
 
@@ -327,24 +330,24 @@ class _k2401_datasheet:
                 )
 
         if days_since_cal is None and self.days_since_cal is None:
-                self.days_since_cal = 365
-                if not suppress_warnings:
-                    _warnings.warn(
-                        name
-                        + ' '
-                        + serial
-                        + ''
-                        + _k2401_datasheet.__name__
-                        + ' Defaulting to 365 (max) days since cal range',
-                        SpecsSettingWarning,
-                        stacklevel=stacklevel,
-                    )
-        if self.days_since_cal > 365 and not suppress_warnings:
+            self.days_since_cal = 365
+            if not suppress_warnings:
                 _warnings.warn(
-                    name + ' days since calibration out of spec',
-                    CalibrationWarning,
+                    name
+                    + ' '
+                    + serial
+                    + ''
+                    + _k2401_datasheet.__name__
+                    + ' Defaulting to 365 (max) days since cal range',
+                    SpecsSettingWarning,
                     stacklevel=stacklevel,
                 )
+        if self.days_since_cal > 365 and not suppress_warnings:
+            _warnings.warn(
+                name + ' days since calibration out of spec',
+                CalibrationWarning,
+                stacklevel=stacklevel,
+            )
 
         # check if in spec for temperature
         self.temp_out_of_spec = True

@@ -1,10 +1,12 @@
 """Blanket tests that everything conformws to the expected API."""
 
-from rminstr_specs._collections import iter_specs
 from pathlib import Path
-import rminstr_specs
+
 import numpy as np
 import pytest
+
+import rminstr_specs
+from rminstr_specs._collections import iter_specs
 
 SAMPLE_ARR = np.ones(10)
 SAMPLE_NAME = 'my-spec'
@@ -16,7 +18,7 @@ def test_simple():
     # serial every spec sheet should accept this,
     # than throw a warning if no logbook is connected
     for s in iter_specs():
-        print('')
+        print()
         print('Checking : ', s.spec)
         print('====================')
         spec = s.spec(SAMPLE_NAME, SAMPLE_SERIAL)

@@ -1,9 +1,10 @@
 """Importer utilities for calorimeter-python."""
 
-from pathlib import Path
 import importlib.util as _ilutil
-import sys as _sys
 import os as _os
+import sys as _sys
+from pathlib import Path
+
 
 def import_specs(model_name: str, functionality: str) -> type:
     """

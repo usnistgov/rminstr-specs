@@ -1,1 +1,6 @@
-from ._specs import DatasheetMeasureDCV, DatasheetMeasureDCI, DatasheetSourceDCI, DatasheetSourceDCV
+from ._specs import (
+    DatasheetMeasureDCI,
+    DatasheetMeasureDCV,
+    DatasheetSourceDCI,
+    DatasheetSourceDCV,
+)
