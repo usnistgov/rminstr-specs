@@ -1,11 +1,10 @@
-Rocky Mountain Instrument Specifications
-========================================
+rminstr_specs
+=============
 
-This package is a library of classes that provide manufacturer data sheet specifications for instruments
-commonly used in the RF power calibration service at NIST. The manufacturer data sheet specifications - which we
-verify with DC voltage standards traceable to the SI - can then be used as part of an uncertainty analysis when
-performing our RF calibrations. This package facilitates this analysis by providing an easy interface into these
+This package is a library of classes that provides accuracy specifications for instruments
+commonly used in the RF power calibration service at NIST. The manufacturer data sheet specifications can then be used as part of an uncertainty analysis whenperforming our RF calibrations. This package facilitates this analysis by providing an easy interface into these
 validated specification sheets via a python interface.
+
 
 For example, to get the uncertainty associated with voltage measurements of an HP 3458A voltmeter
 under typicaly operating conditions, you can do the following:

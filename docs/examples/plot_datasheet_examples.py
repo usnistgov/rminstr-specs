@@ -14,9 +14,9 @@ the default assumptions about the state of the instrument are
 printed as warnings.
 """
 
-from rminstr_specs import HP3458A
 import numpy as np
 
+from rminstr_specs import HP3458A
 
 voltage_specs = HP3458A.DatasheetDCV()
 

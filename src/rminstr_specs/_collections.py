@@ -1,11 +1,13 @@
 """Helper functions and structures for the specifications classes"""
 
-from dataclasses import dataclass as _dataclass
-import numpy as np
-import pkgutil
-import rminstr_specs
 import importlib
+import pkgutil
 from collections import namedtuple
+from dataclasses import dataclass as _dataclass
+
+import numpy as np
+
+import rminstr_specs
 
 SpecTuple = namedtuple('SpecTuple', 'model module spec')
 
@@ -82,8 +84,7 @@ def _ciel_to_list(x: float, l: list[float]) -> float:
     idx = np.abs(np.array(l) - x).argmin()
     if x > l[idx]:
         idx += 1
-    if idx > len(l) - 1:
-        idx = len(l) - 1
+    idx = min(idx, len(l) - 1)
     return l[idx]
 
 

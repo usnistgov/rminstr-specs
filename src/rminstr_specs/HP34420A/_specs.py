@@ -5,17 +5,18 @@ Source and more information and instructions for calculating accuracies are foun
 manuals\HP 34420A user's guide.pdf of this repo.
 """
 
-from rminstr_specs._collections import (
-    meas_accuracy,
-    accuracy_point,
-    temp_coef_point,
-    _ciel_to_list,
-)
-from rminstr_specs import Specification, CalibrationWarning, SpecsSettingWarning
-import numpy as _np
 import warnings as _warnings
+
+import numpy as _np
 from scipy.interpolate import interp1d as _interp1d
 
+from rminstr_specs import CalibrationWarning, Specification, SpecsSettingWarning
+from rminstr_specs._collections import (
+    _ciel_to_list,
+    accuracy_point,
+    meas_accuracy,
+    temp_coef_point,
+)
 
 _warning_stack = 3
 

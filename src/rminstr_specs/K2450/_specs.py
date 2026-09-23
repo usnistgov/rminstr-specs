@@ -10,11 +10,14 @@ attempt to infer calibration history and temperature information.
 
 """
 
-import numpy as _np
-from rminstr_specs import Specification, SpecsSettingWarning, CalibrationWarning
-from dataclasses import dataclass as _dataclass
-from rminstr_specs._collections import _ciel_to_list
 import warnings as _warnings
+from dataclasses import dataclass as _dataclass
+
+import numpy as _np
+
+from rminstr_specs import CalibrationWarning, Specification, SpecsSettingWarning
+from rminstr_specs._collections import _ciel_to_list
+
 # %% Classes for storing spec tables and outputting values
 
 __all__ = []

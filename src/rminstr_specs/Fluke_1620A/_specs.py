@@ -1,9 +1,10 @@
 """Module for getting manufacturer uncertainties on Fluke 1620A readings."""
 
 import warnings
+
 import numpy as np
 
-from rminstr_specs import Specification, CalibrationWarning
+from rminstr_specs import CalibrationWarning, Specification
 
 __all__ = ['DatasheetHumidity', 'DatasheetTemperature']
 
