@@ -1,23 +1,26 @@
 """Specs module."""
 
 # system/file path libraries
-import os.path
 import importlib
 import inspect
-import warnings
-
-# usual suspects
-import pandas as _pd
-import numpy as _np
+import os.path
 import time
+import warnings
 
 # specification abstractions
 from abc import ABC, abstractmethod
+from collections.abc import Callable
 from datetime import datetime
+from pathlib import Path
 
 # type hinting
-from typing import Union, Tuple, Callable
-from pathlib import Path
+from typing import Tuple, Union
+
+import numpy as _np
+
+# usual suspects
+import pandas as _pd
+
 # %% Inheritable Classes for identifying specifications
 
 
